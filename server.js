@@ -24,7 +24,7 @@ async function handleGenerarGuia(data) {
     try {
         const guiaGenerada = await generarGuia(data);
         // console.log(guiaGenerada)
-        if (guiaGenerada && guiaGenerada.data && Array.isArray(guiaGenerada.data)) {
+        if (guiaGenerada && guiaGenerada.data) {
             const numGuiasGeneradas = guiaGenerada.data.length;
             contador += numGuiasGeneradas;
             io.emit('contador_actualizado', contador);
